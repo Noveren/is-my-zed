@@ -250,12 +250,12 @@
     "line_height": "standard",
     "option_as_meta": false,
     "button": false,
-    "shell": {
-      "with_arguments": {
-        "program": "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-        "args": ["-Nologo"]
-      }
-    },
+    // "shell": {
+    //   "with_arguments": {
+    //     "program": "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    //     "args": ["-Nologo"]
+    //   }
+    // },
     "toolbar": {
       "breadcrumbs": false
     },
