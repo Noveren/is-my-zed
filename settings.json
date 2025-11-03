@@ -9,10 +9,11 @@
 //
 // Reference: https://www.kevnu.com/zh/posts/10
 {
+  "icon_theme": "Zed (Default)",
   "auto_update": false,
   "disable_ai": true,
   "vim_mode": true,
-  "proxy": "http://127.0.0.1/4780",
+  // "proxy": "http://127.0.0.1/4780",
 
   "ui_font_family": "JetBrainsMono Nerd Font",
   "ui_font_size": 15,
@@ -43,12 +44,47 @@
     "**/dist",
     // "**/build",
     "**/node_modules",
+    ".zig-cache",
     "**/target"
   ],
   "file_types": {
     "C": [".c", ".h"],
     "C++": [".cc", ".hh"],
     "JSON": [".json", ".clangd"]
+  },
+  "languages": {
+    "C": {
+      "format_on_save": "on",
+      "tab_size": 2
+    },
+    "C++": {
+      "format_on_save": "on",
+      "tab_size": 2
+    }
+  },
+  "lsp": {
+    "clangd": {},
+    "rust-analyzer": {
+      "initialization_options": {
+        // https://rust-analyzer.github.io/book/features.html#inlay-hints
+        "inlayHints": {
+          "maxLength": null,
+          "lifetimeElisionHints": {
+            "enable": "skip_trivial",
+            "useParameterNames": true
+          },
+          "closureReturnTypeHints": {
+            "enable": "always"
+          }
+        }
+      }
+    },
+    "tinymist": {
+      "settings": {
+        "exportPdf": "onSave",
+        "outputPath": "$root/$name"
+      }
+    }
   },
 
   // Telemetry https://zed.dev/docs/telemetry
@@ -155,17 +191,12 @@
   },
   "outline_panel": {},
   "collaboration_panel": { "button": false },
-  "chat_panel": { "button": "never" },
   "git_panel": {},
   "message_editor": {},
   "notification_panel": { "button": false },
   "agent": { "button": false },
   "debugger": { "button": false },
-  "slash_commands": {
-    "docs": {
-      "enabled": false
-    }
-  },
+  "slash_commands": {},
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": true,
@@ -193,8 +224,7 @@
     "lsp_pull_diagnostics": {
       "enabled": true,
       "debounce_ms": 50
-    },
-    "cargo": null
+    }
   },
 
   "terminal": {
@@ -234,9 +264,6 @@
       "show": "auto"
     }
   },
-
-  // LSP
-  "lsp": {},
 
   "git": {
     "git_gutter": "hide",
