@@ -45,14 +45,22 @@
     // "**/build",
     "**/node_modules",
     ".zig-cache",
-    "**/target"
+    "**/target",
+    "**/.cache"
   ],
   "file_types": {
+    "Assembly": ["s", ".S"],
     "C": [".c", ".h"],
     "C++": [".cc", ".hh"],
     "JSON": [".json", ".clangd"]
   },
   "languages": {
+    "Assembly": {
+      "completions": {
+        "lsp": false
+      },
+      "language_servers": []
+    },
     "C": {
       "format_on_save": "on",
       "tab_size": 2
@@ -60,6 +68,9 @@
     "C++": {
       "format_on_save": "on",
       "tab_size": 2
+    },
+    "Make": {
+      "auto_indent": false
     }
   },
   "lsp": {
@@ -83,6 +94,11 @@
       "settings": {
         "exportPdf": "onSave",
         "outputPath": "$root/$name"
+      }
+    },
+    "asm-lsp": {
+      "binary": {
+        "path": "asm-lsp"
       }
     }
   },
@@ -111,7 +127,7 @@
   "show_wrap_guides": false,
   "wrap_guides": [],
 
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "indent_guides": {
     "enabled": true,
     "line_width": 1,
@@ -252,8 +268,10 @@
     "button": false,
     "shell": {
       "with_arguments": {
-        "program": "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-        "args": ["-Nologo"]
+        "program": "C:\\Users\\no-ve\\scoop\\shims\\bash.exe",
+        "args": ["--login", "-i"]
+        // "program": "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        // "args": ["-Nologo"]
       }
     },
     "toolbar": {
