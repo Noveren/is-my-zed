@@ -19,7 +19,7 @@
   "ui_font_size": 15,
   "ui_font_weight": 400,
   "ui_font_features": {
-    "calt": true
+    "calt": true,
   },
 
   "buffer_font_family": "JetBrainsMono Nerd Font",
@@ -27,13 +27,13 @@
   "buffer_font_weight": 400,
   "buffer_line_height": "comfortable",
   "buffer_font_features": {
-    "calt": true
+    "calt": true,
   },
 
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "One Dark",
   },
   "autosave": "off",
   "format_on_save": "on",
@@ -46,32 +46,40 @@
     "**/node_modules",
     ".zig-cache",
     "**/target",
-    "**/.cache"
+    "**/.cache",
   ],
   "file_types": {
-    "Assembly": ["s", ".S"],
-    "C": [".c", ".h"],
-    "C++": [".cc", ".hh"],
-    "JSON": [".json", ".clangd"]
+    "Assembly": ["**/*.s", "**/*.S"],
+    "C": ["**/*.c", "**/*.h"],
+    "C++": ["**/*.cc", "**/*.hh"],
+    "JSON": ["**/*.json", "**/*.clangd"],
+    "Typst": ["**/*.typ", "**/*.typ.md"],
   },
   "languages": {
     "Assembly": {
       "completions": {
-        "lsp": false
+        "lsp": false,
       },
-      "language_servers": []
+      "language_servers": [],
     },
     "C": {
       "format_on_save": "on",
-      "tab_size": 2
+      "tab_size": 2,
     },
     "C++": {
       "format_on_save": "on",
-      "tab_size": 2
+      "tab_size": 2,
     },
     "Make": {
-      "auto_indent": false
-    }
+      "auto_indent": false,
+    },
+    "Typst": {
+      "soft_wrap": "editor_width",
+      "format_on_save": "off",
+      "inlay_hints": {
+        "enabled": false,
+      },
+    },
   },
   "lsp": {
     "clangd": {},
@@ -82,34 +90,36 @@
           "maxLength": null,
           "lifetimeElisionHints": {
             "enable": "skip_trivial",
-            "useParameterNames": true
+            "useParameterNames": true,
           },
           "closureReturnTypeHints": {
-            "enable": "always"
-          }
-        }
-      }
+            "enable": "always",
+          },
+        },
+      },
     },
     "tinymist": {
+      // https://myriad-dreamin.github.io/tinymist/config/neovim.html
       "settings": {
-        "exportPdf": "onSave",
-        "outputPath": "$root/$name"
-      }
+        "exportPdf": "never",
+        "outputPath": "$root/$name",
+        "formatterMode": "disable",
+      },
     },
     "asm-lsp": {
       "binary": {
-        "path": "asm-lsp"
-      }
-    }
+        "path": "asm-lsp",
+      },
+    },
   },
 
   // Telemetry https://zed.dev/docs/telemetry
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   // Workspace Persistence https://zed.dev/docs/workspace-persistence
-  "restore_on_startup": "none",
+  "restore_on_startup": "empty_tab",
   "restore_on_file_reopen": false,
   "close_on_file_delete": false,
 
@@ -133,17 +143,17 @@
     "line_width": 1,
     "active_line_width": 1,
     "coloring": "fixed",
-    "background_coloring": "disabled"
+    "background_coloring": "disabled",
   },
   "calls": {
     "mute_on_join": true,
-    "share_on_join": false
+    "share_on_join": false,
   },
   "toolbar": {
     "breadcrumbs": true,
     "quick_actions": true,
     "selections_menu": false,
-    "agent_review": false
+    "agent_review": false,
   },
   // Title Bar https://zed.dev/docs/visual-customization#titlebar
 
@@ -153,31 +163,32 @@
     "show_project_items": true,
     "show_onboarding_banner": false,
     "show_user_picture": false,
-    "show_sign_in": false
+    "show_sign_in": false,
   },
   "scrollbar": {
     "show": "auto",
     "cursors": true,
-    "git_diff": true,
+    "git_diff": false,
     "search_results": true,
     "selected_text": true,
     "selected_symbol": true,
     "diagnostics": "all",
     "axes": {
       "horizontal": null,
-      "vertical": true
-    }
+      "vertical": true,
+    },
   },
   "minimap": null,
   "gutter": {
+    // https://zed.dev/docs/reference/all-settings?highlight=gutter#gutter
     "line_numbers": true,
-    "runnables": true,
-    "breakpoints": true,
+    "runnables": false,
+    "breakpoints": false,
     "folds": true,
-    "min_line_number_digits": 4
+    "min_line_number_digits": 4,
   },
   "search": {
-    "button": true
+    "button": true,
   },
   "inlay_hints": {
     "enabled": true,
@@ -187,7 +198,7 @@
     "show_background": false,
     "edit_debounce_ms": 700,
     "scroll_debounce_ms": 50,
-    "toggle_on_modifiers_press": null
+    "toggle_on_modifiers_press": null,
   },
   "project_panel": {
     "button": true,
@@ -203,7 +214,7 @@
     "auto_fold_dirs": true,
     "scrollbar": null,
     "show_diagnostics": "all",
-    "indent_guides": null
+    "indent_guides": null,
   },
   "outline_panel": {},
   "collaboration_panel": { "button": false },
@@ -216,14 +227,14 @@
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": true,
-    "show_tab_bar_buttons": false
+    "show_tab_bar_buttons": false,
   },
   "tabs": {
     "git_status": true,
     "close_position": "right",
     "file_icons": true,
     "show_close_button": "always",
-    "show_diagnostics": "all"
+    "show_diagnostics": "all",
   },
   "preview_tabs": {},
   "file_finder": {},
@@ -235,15 +246,16 @@
       "update_debounce_ms": 150,
       "padding": 4,
       "min_column": 0,
-      "max_severity": null
+      "max_severity": null,
     },
     "lsp_pull_diagnostics": {
       "enabled": true,
-      "debounce_ms": 50
-    }
+      "debounce_ms": 50,
+    },
   },
 
   "terminal": {
+    // https://zed.dev/docs/reference/all-settings?highlight=terminal#terminal
     "alternate_scroll": "off",
     "blinking": "terminal_controlled",
     "copy_on_select": false,
@@ -254,40 +266,45 @@
     "detect_venv": {
       "on": {
         "directories": [".venv"],
-        "activate_script": "default"
-      }
+        "activate_script": "default",
+      },
     },
     "env": {},
     "font_size": 14,
     "font_family": "JetBrainsMono Nerd Font",
     "font_features": {
-      "calt": true
+      "calt": true,
     },
     "line_height": "standard",
     "option_as_meta": false,
-    "button": false,
-    "shell": {
-      "with_arguments": {
-        "program": "C:\\Users\\no-ve\\scoop\\shims\\bash.exe",
-        "args": ["--login", "-i"]
-        // "program": "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-        // "args": ["-Nologo"]
-      }
-    },
+    "button": true,
+    // "shell": {
+    // "with_arguments": {
+    // "program": "C:\\Users\\no-ve\\scoop\\shims\\bash.exe",
+    // "args": ["--login", "-i"],
+    // "program": "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    // "args": ["-Nologo"]
+    // },
+    // },
     "toolbar": {
-      "breadcrumbs": false
+      "breadcrumbs": false,
     },
     "working_directory": "current_project_directory",
     "scrollbar": {
-      "show": "auto"
-    }
+      "show": "auto",
+    },
   },
 
   "git": {
-    "git_gutter": "hide",
+    // 左侧-行-更改类型
+    "git_gutter": "tracked_files",
     "gutter_debounce": null,
-    "inline_blame": { "enabled": false },
-    "hunk_style": null
+    // 当前行更改信息
+    "inline_blame": {
+      "enabled": false,
+    },
+    "hunk_style": null,
   },
-  "line_indicator_format": "short"
+
+  "line_indicator_format": "short",
 }
