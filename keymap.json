@@ -37,12 +37,6 @@
     }
   },
   {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-t": null
-    }
-  },
-  {
     "context": "vim_mode == insert",
     "bindings": {
       "ctrl-t": null
@@ -57,7 +51,31 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-t": "terminal_panel::Toggle"
+      "ctrl-`": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-b": "outline_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "vim_mode == literal",
+    "bindings": {
+      "ctrl-b": null
+    }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "ctrl-b": null
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-b": null
     }
   }
 ]
